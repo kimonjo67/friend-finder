@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Friend Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    <strong>Survey Questions</strong>
+                </h2>
+                <div class="panel panel-body">
+                    <h2>About You</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name (Required)</label>
+                            <input type="name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Link to Image (Required)</label>
+                            <input type="link" class="form-control" id="image" placeholder="Image">
+                        </div>
+
+                        <!-- Drop down selection -->
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <h3>
+                                    <strong>Question 1</strong>
+                                </h3>
+                                <h4>Do you see yourself as a creative mind</h4>
+                                <select data-placeholder="" id="q1" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 2</strong>
+                                </h3>
+                                <h4>Do love Netflix and Chill on Friday nights</h4>
+                                <select data-placeholder="" id="q2" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 3</strong>
+                                </h3>
+                                <h4>Are an excellent cook, I mean delicious food!!</h4>
+                                <select data-placeholder="" id="q3" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 4</strong>
+                                </h3>
+                                <h4>Do you have sympathy for the less fortunate</h4>
+                                <select data-placeholder="" id="q4" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 5</strong>
+                                </h3>
+                                <h4>Are a dog person</h4>
+                                <select data-placeholder="" id="q5" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 6</strong>
+                                </h3>
+                                <h4>Are you intrigued by coders, I mean they are cool</h4>
+                                <select data-placeholder="" id="q6" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 7</strong>
+                                </h3>
+                                <h4>Are a great dancer?</h4>
+                                <select data-placeholder="" id="q7" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 8</strong>
+                                </h3>
+                                <h4>Do you prefer coffee over tea?</h4>
+                                <select data-placeholder="" id="q8" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 9</strong>
+                                </h3>
+                                <h4>Do you carry yourself with a lot of respect and value</h4>
+                                <select data-placeholder="" id="q9" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3>
+                                    <strong>Question 10</strong>
+                                </h3>
+                                <h4>Do you think you are awesome</h4>
+                                <select data-placeholder="" id="q10" class="chosen-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
