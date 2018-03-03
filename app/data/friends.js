@@ -1,6 +1,6 @@
 //array that holds all the 'friends' that have taken the survey
 //initialize starting with 'dummy' data
-var friendList = [
+var friends = [
   {
     name: "Sam Mwangi",
     photo:
@@ -16,12 +16,12 @@ var friendList = [
   {
     name: "Denzel",
     photo:
-      "https://www.biography.com/.image/t_share/MTE1ODA0OTcxODE3OTI4MjA1/denzel-washington-9524687-2-402.jpg",
+      "https://www.biography.com/.photo/t_share/MTE1ODA0OTcxODE3OTI4MjA1/denzel-washington-9524687-2-402.jpg",
     scores: ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"]
   },
   {
     name: "Pink Panther",
-    photo: "http://is2.mzstatic.com/image/thumb/Video/v4/e4/be/db/e4bedbbd-c698-891b-efd6-d901f7737fb5/source/1200x630bb.jpg",
+    photo: "http://is2.mzstatic.com/photo/thumb/Video/v4/e4/be/db/e4bedbbd-c698-891b-efd6-d901f7737fb5/source/1200x630bb.jpg",
     scores: ["5", "1", "1", "5", "", "5", "3", "5", "5", "5"]
   },
   {
@@ -62,4 +62,4 @@ var friendList = [
   }
 ];
 
-module.exports = friendList;
+module.exports = friends;

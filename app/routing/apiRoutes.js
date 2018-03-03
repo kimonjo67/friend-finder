@@ -1,50 +1,63 @@
+// ===============================================================================
 // LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on friends.
+// Linking the routes to "data" sources that hold the array friends data
+// ===============================================================================
 
-var friends = require("../data/friends");
+var friends = require('../data/friends.js');
 
-// ROUTING
-module.exports = function(app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-  // ---------------------------------------------------------------------------
-
-  app.get("/api/friends", function(req, res) {
+module.exports = function (app) {
+  // //api path to get the friends data, responds with a json object (an array of friends). Activated on both html pages with blue API Link
+  app.get('/api/friends', function (req, res) {
     res.json(friends);
   });
 
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a survey.. this data is then sent to the server...
-  // Then the server saves the data to the friendsData array)
-  // ---------------------------------------------------------------------------
+  // *** Updates an array of friends "database" array and sends back the json form of the most compatible new friend
+  app.post('/api/friends', function (req, res) {
+    // newFriend is the user that filled out the survey
+    var newFriend = req.body;
 
-  app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body-parser middleware
-    if (friends.length === true) {
-      friends.push(req.body);
-      res.json(true);
-    } else {
-      friends.push(req.body);
-      res.json(false);
+    // compute best match from scores
+    var bestMatch = {};
+
+    for (var i = 0; i < newFriend.scores.length; i++) {
+      if (newFriend.scores[i] == "1 (Strongly Disagree)") {
+        newFriend.scores[i] = 1;
+      } else if (newFriend.scores[i] == "5 (Strongly Agree)") {
+        newFriend.scores[i] = 5;
+      } else {
+        newFriend.scores[i] = parseInt(newFriend.scores[i]);
+      }
     }
+    // compare the scores of newFriend with the scores of each friend in the database and find the friend with the smallest difference when each set of scores is compared
+
+    var bestMatchIndex = 0;
+    //greatest score difference for a question is 4, therefore greatest difference is 4 times # of questions in survey
+    var bestMatchDifference = 40;
+
+    for (var i = 0; i < friends.length; i++) {
+      var totalDifference = 0;
+
+      for (var index = 0; index < friends[i].scores.length; index++) {
+        var differenceOneScore = Math.abs(friends[i].scores[index] - newFriend.scores[index]);
+        totalDifference += differenceOneScore;
+      }
+
+      // if the totalDifference in scores is less than the best match so far
+      // save that index and difference
+      if (totalDifference < bestMatchDifference) {
+        bestMatchIndex = i;
+        bestMatchDifference = totalDifference;
+      }
+    }
+
+    // the best match index is used to get the best match data from the friends index
+    bestMatch = friends[bestMatchIndex];
+
+    // Put new friend from survey in "database" array
+    friends.push(newFriend);
+
+    // return the best match friend
+    res.json(bestMatch);
   });
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function() {
-    // Empty out the arrays of data
-    friends = [];
-
-    console.log(friends);
-  });
 };
