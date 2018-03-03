@@ -30,6 +30,8 @@
                             <h4>Link to Photo Image (Required)</h4>
                             <input type="text" name="" id="photo" class="form-control" required>
                             <hr>
+                            <h3>
+                            <strong>Question 1</strong></h3>
                             <h4>Do you see yourself as a creative mind</h4>
                             <select data-placeholder="" id="q1" class="chosen-select">
                                 <option value="">Choose an option</option>
@@ -196,14 +198,14 @@
         var currentURL = window.location.origin;
         // Capture the form inputs
         $("#submit").on("click", function () {
-            //event.preventDefault();
+            event.preventDefault();
 
             if (($('#name').val().trim() !== "") && ($('#photo').val().trim() !== "")) {
                 // Create an object for the user's data
                 var userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
-                    scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+                    scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
                 }
                 // AJAX post the data to the friends API.
                 $.post(currentURL + "/api/friends", userData, function (data) {
@@ -221,7 +223,7 @@
                 });
             } else {
                 $(".modal-title").text("Missing required information");
-                $(".modal-body").html("<h3>Please complete the form before submitting</h3>");
+                $(".modal-body").html("<h5>Please complete the form before submitting</h5>");
                 $("#resultsModal").modal('toggle');
 
             }

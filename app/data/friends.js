@@ -2,7 +2,7 @@
 //initialize starting with 'dummy' data
 var friends = [
   {
-    name: "Sam Mwangi",
+    name: "This guy",
     photo:
       "https://avatars3.githubusercontent.com/u/33467467?s=400&u=aa8843ef101d8708c71b181b73868e49f56bc245&v=4",
     scores: ["3", "3", "3", "3", "3", "3", "3", "3", "3", "3"]
